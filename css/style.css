@@ -617,5 +617,15 @@ My Edits  Section
 	border: 1px solid black; 
 	padding: 15px;
 	width: 10%;
-	
+}
+.modal_table_right {
+    color:orange;
+    text-align:center;
+    margin-bottom:0px;
+    margin-top:0px;
+}
+.modal_table_left {
+    text-align:center;
+    margin-bottom:0px;
+    margin-top:0px;
 }

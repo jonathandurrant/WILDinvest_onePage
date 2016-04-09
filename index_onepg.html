@@ -114,7 +114,7 @@ class="fa fa-sort-desc"></span></a>
 								<a href="#" class="chartInvest"><span class="fa fa-line-chart"></span> How it works</a>
 								</li>
 								<li>
-									<a href="#">Profit Calculator</a>
+									<a href="#profitCalc_modal" data-toggle="modal">Profit Calculator</a>
 								</li>
 								<li>
 									<a href="#">Risk Protection</a>
@@ -714,16 +714,16 @@ FOOTER
                         </div>
                         <div id="outputs" class="col-xs-12">
                             <div class="row bg-light">
-                                <h3 class="col-xs-12 col-sm-4" style="text-align:center;margin-bottom:0px; margin-top:0px;">Investment</h3><h3 id="investAmount" class="col-xs-12  col-sm-8" style="color:orange; text-align:center;margin-bottom:0px; margin-top:0px;">test</h3>
-                                <h3 class="col-xs-12 col-sm-4" style="text-align:center;margin-bottom:0px; margin-top:0px;" id="animal">Nyala</h3>
-                                <h3 id="animalAmount" class="col-xs-12  col-sm-8" style="color:orange; text-align:center;margin-bottom:0px; margin-top:0px;">10 (test)</h3>
+                                <h3 class="col-xs-12 modal_table_left col-sm-5" >Investment</h3><h3 id="investAmount" class="col-xs-12  col-sm-7 modal_table_right">test</h3>
+                                <h3 class="col-xs-12 modal_table_left col-sm-5" id="animal">Starting Herd</h3>
+                                <h3 id="animalAmount" class="col-xs-12  modal_table_right col-sm-7">10 female Sable</h3>
                             </div>
                             <div class="row" style="background-color:mintCream;">
                                 <h2>5 year ROI </h2>
                                 <p style="padding:0px;"></p>
-                                <h3 class="col-xs-12 col-sm-4" style="text-align:center;margin-bottom:0px; margin-top:0px;">Return</h3><h3 id="return" class="col-xs-12  col-sm-8" style="color:orange; text-align:center;margin-bottom:0px; margin-top:0px;">test</h3>
-                                <h3 class="col-xs-12 col-sm-4" style="text-align:center;margin-bottom:0px; margin-top:0px;">Annualized</h3><h3 id="annualized" class="col-xs-12  col-sm-8" style="color:orange; text-align:center;margin-bottom:0px; margin-top:0px;">test</h3>
-                                <h3 class="col-xs-12 col-sm-4" style="text-align:center;margin-bottom:0px; margin-top:0px;">Profit</h3><h3 id="profit" class="col-xs-12  col-sm-8" style="color:orange; text-align:center;margin-bottom:0px; margin-top:0px;">test</h3>
+                                <h3 class="col-xs-12 modal_table_left col-sm-4" >Return</h3><h3 id="return" class="col-xs-12 modal_table_right col-sm-8">test</h3>
+                                <h3 class="col-xs-12 col-sm-4 modal_table_left">Annualized</h3><h3 id="annualized" class="col-xs-12 modal_table_right col-sm-8">test</h3>
+                                <h3 class="col-xs-12 modal_table_left col-sm-4">Profit</h3><h3 id="profit" class="col-xs-12 modal_table_right col-sm-8">test</h3>
                             </div>
                             <div class="row" style="background-color:aliceblue;">
                                 <h2>Annual Payout    <a href="#" style="font-size:20px; color:dodgerblue; cursor:pointer;" data-toggle="modal" data-target="#whatIsThis_modal">What is this?</a></h2>
@@ -741,19 +741,27 @@ FOOTER
                                     <div class="tab-content">
                                         <div id="tab1" class="tab-pane fade in active">
                                             <h3 style="text-align:center;" id="yr1">R1 000 000 (test) </h3>
+                                            <h3 class="col-xs-12 col-sm-3 modal_table_left">Sold:</h3><h3 id="sold1" class="col-xs-12 modal_table_right col-sm-9">12 males, 2 females</h3>
+                                            
+                                            
+
                                         </div>
                                         <div id="tab2" class="tab-pane fade">
                                             <h3 style="text-align:center;" id="yr2">R1 000 000 (test)</h3>
+                                            <h3 class="col-xs-12 col-sm-3 modal_table_left">Sold:</h3><h3 id="sold2" class="col-xs-12 modal_table_right col-sm-9">12 males, 2 females</h3>
                                         </div>
                                         <div id="tab3" class="tab-pane fade">
                                             <h3 style="text-align:center;" id="yr3">R1 000 000 (test) </h3>
+                                            <h3 class="col-xs-12 col-sm-3 modal_table_left">Sold:</h3><h3 id="sold3" class="col-xs-12 modal_table_right col-sm-9">12 males, 2 females</h3>
 
                                         </div>
                                         <div id="tab4" class="tab-pane fade">
                                             <h3 style="text-align:center;" id="yr4">R1 000 000 (test) </h3>
+                                            <h3 class="col-xs-12 col-sm-3 modal_table_left">Sold:</h3><h3 id="sold4" class="col-xs-12 modal_table_right col-sm-9">12 males, 2 females</h3>
                                         </div>
                                         <div id="tab5" class="tab-pane fade">
                                             <h3 style="text-align:center;" id="yr5">R1 000 000 (test) </h3>
+                                            <h3 class="col-xs-12 col-sm-3 modal_table_left">Sold:</h3><h3 id="sold5" class="col-xs-12 col-sm-9 modal_table_right" >12 males, 2 females</h3>
                                         </div>
                                     </div>
                                 </div>
