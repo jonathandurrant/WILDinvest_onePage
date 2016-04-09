@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="format-detection" content="telephone=no"/>
+		<link rel="icon" href="images/antelope-128.png" type="image/x-icon">
+		<title>Home</title>
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.css" rel="stylesheet">
+
+		<!-- Links -->
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/camera.css" rel="stylesheet">
+		<link href="css/search.css" rel="stylesheet">
+
+
+		<!--JS-->
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-migrate-1.2.1.min.js"></script>
+
+
+		<!--[if lt IE 9]>
+<div style=' clear: both; text-align:center; position: relative;'>
+<a href="http://windows.microsoft.com/en-US/internet-explorer/..">
+<img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+</a>
+</div>
+<script src="js/html5shiv.js"></script>
+<![endif]-->
+		<script src='js/device.min.js'></script>
+        
+        <!-- Profit Calc modal --> 
+        <script>
+        $(document).ready(function(){
+            $(".modal").on("hide.bs.modal", function() {
+                $("#inputs").show("slow");
+                $("#outputs").hide("slow");
+                $("#whatIsThis").hide("slow");
+                $("#investment").val("");
+            });
+            $("#profitCalc_modal").on("shown.bs.modal", function() {
+                $("#investment").focus(); 
+            });
+            $("#outputs").hide();
+            $("#whatIsThis").hide();
+            $("#calc_btn").click(function(){
+                $("#inputs").hide();
+                $("#outputs").show();
+                $("#investAmount").text("R " +
+                    $("#investment").val()
+                );
+            });
+            $("#whatIsThis_open").click(function(){
+                $("#whatIsThis").show();
+            });
+            $("#whatIsThis_close").click(function(){
+                $("#whatIsThis").hide();
+            });
+        });
+        </script>
+       
+
+
+	</head>
+	<body>
+		<div class="page">
+			<!--========================================================
+HEADER
+=========================================================-->
+			<header>
+				<section class="clearfix">
+					<div class="container">
+						<!-- =======================================================
+Login Block  
+============================================================
+<div class="block_login">
+<a href="#" class="btn btn-default"><span class="fa fa-user"></span> Open an Account <span
+class="fa fa-sort-desc"></span></a>
+<a href="#" class="btn btn-primary"><span class="fa fa-lock"></span> login</a>
+</div>  
+-->
+						<div class="block_login">
+							<p style="padding:10px;"></p>
+							<a href="#" class="btn btn-default btn-lg chartInvest"><span class="fa fa-line-chart"></span>  How it works </a>
+							<a href="#" class="btn btn-primary btn-lg chartInvest"><span class="fa fa-edit"></span> Get Started </a>
+						</div>
+
+						<div class="navbar-header">
+							<h1 class="navbar-brand col-xs-12">
+								<a data-type='rd-navbar-brand' href="./">WILD<i>invest</i>
+								</a>
+								<span class="brand_slogan col-xs-12">
+									<!-- helping you invest --><strong>Getting in the game,</strong><br><i>without</i> getting your hands dirty 
+								</span>
+							</h1>
+						</div>
+					</div>
+					
+					<div class="container">
+					<hr/>
+					</div>
+
+					
+				</section>
+
+				<div id="stuck_container" class="stuck_container">
+					<nav class="navbar navbar-default navbar-static-top ">
+						<div class="container">
+
+							<ul class="navbar-nav sf-menu" data-type="navbar">
+								<li>
+								<a href="#" class="chartInvest"><span class="fa fa-line-chart"></span> How it works</a>
+								</li>
+								<li>
+									<a href="#">Profit Calculator</a>
+								</li>
+								<li>
+									<a href="#">Risk Protection</a>
+								</li>
+							
+								<li>
+									<a href="index-4.html">The Industry</a>
+								</li>
+								<li>
+									<a href="index-5.html">Contact us</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</header>
+
+			<!--========================================================
+CONTENT
+=========================================================-->
+
+			<main>
+                <p style="padding:10px;"></p>
+				<div class="camera_container">
+					<div id="camera" class="camera_wrap">
+						<div data-src="images/slide1.jpg">
+							<!--
+							<div class="camera_caption fadeIn text-center">
+								<span class="h2"><br>with game farms</span>
+								<span class="h4">Mes cuml dia sed inenias ingerto lot aliiqt <br>dolore ipsum commete.</span>
+							</div>
+							-->
+						</div>
+						<div data-src="images/slide2.jpg">
+                            <!--
+							<div class="camera_caption fadeIn text-center">
+								<span class="h2">Buy low and <br>sell high</span>
+								<span class="h4">Mes cuml dia sed inenias ingerto lot aliiqt <br>dolore ipsum commete.</span>
+							</div>
+							-->
+						</div>
+						<div data-src="images/slide3.jpg">
+                            <!--
+							<div class="camera_caption fadeIn text-center">
+								<span class="h2">The market hates <br/> uncertainty</span>
+								<span class="h4">Mes cuml dia sed inenias ingerto lot aliiqt <br>dolore ipsum commete.</span>
+							</div>
+							-->
+						</div>
+					</div>
+				</div>
+
+
+				<section class="bg-light well">
+					<div class="container text-center" id="howItWorks">
+						<div class="row">
+							<div class="col-md-4 col-sm-4 col-xs-12 mg-add wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
+								<div class="panel">
+									<div class="panel-heading">
+										<div class="icon"><span class="fa fa-shopping-cart" style="font-size:50px;"></span></div>
+									</div>
+									<div class="panel-body"  data-equal-group="1">
+										<h2>Purchase animals</h2>
+										<br><h3 class="text-primary">We handle the logistics</h3>
+										<h4>Choose between:</h4><br>
+										<ul style="list-style-type:circle;"><li><strong>Nyala:</strong> Investment = R150K - R2m</li><li><strong>Sable: </strong>Investment = R2m - R20m</li></ul>
+										<a href="#purchase_modal" class="btn-link pulse" data-toggle="modal"><span class="fa fa-info info_style" style="font-size:35px;"></span></a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-md-4 col-sm-4 col-xs-12 mg-add wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.4s">
+								<div class="panel" >
+									<div class="panel-heading" >
+										<div class="icon"><span class="fa fa-line-chart lineChart" style="font-size:50px;"></span></div>
+									</div>
+									<div class="panel-body" data-equal-group="1">
+										<h2>Wait for your investment to grow</h2><br>
+										<h3 class="text-primary">we have the land and expertise</h3>
+										<br><ul><li>5 year agreement to breed your animals on our farm</li><li>No extra cost to you</li><li> Access to high quality breeding males</li></ul>
+										<a href="#wait_modal" data-toggle="modal" class="btn-link pulse"><span class="fa fa-info info_style" style="font-size:35px;"></span></a>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4 col-sm-4 col-xs-12 mg-add wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.6s">
+								<div class="panel" >
+									<div class="panel-heading">
+										<div class="icon"><span class="fa fa-pie-chart"></span></div>
+									</div>
+									<div class="panel-body" data-equal-group="1">
+										<h2>collect your profit </h2><br>
+										<h3 class="text-primary">We find buyers for your animals</h3><br>
+
+										<ul><li>You herd of animals will have grown expontentially</li><li>Profits are shared between you and the farm</li></ul>
+										<a href="#profit_modal" data-toggle="modal" class="btn-link pulse"><span class="fa fa-info info_style" style="font-size:35px;"></span></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				<div class="container">
+					<hr/>
+				</div>
+				
+				<section class="well2">
+					<div class="container center767">
+						<div class="row">
+							<div class=" col-xs-12 center991 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s" style="text-align:center;">
+								<h2>Profit Calculator</h2><br>
+								<button type="button" class="btn btn-default btn-lg" id="profitCalc_btn" data-toggle="modal" data-target="#profitCalc_modal"><span class="fa fa-xlg fa-calculator" style="font-size:30px; vertical-align:middle; text-align:left;"></span><span style="text-align:center;"> Start here</span> </button>
+
+								<p>As with any investment model, the projected ROI is not guaranteed. Please refer to <a href="#" class="links">Risk protection</a> for details on the insurances we offer to our investors. </p>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				<div class="container">
+					<hr/>
+				</div>
+
+				<section class="well3">
+					<div class="container center767" id="riskProtection">
+						<h2>Risk Protection</h2>
+
+						<div class="row offs2">
+							<div class="col-md-4 col-sm-12 col-xs-12">
+								<img src="images/page-3_img01.jpg" alt=""/>
+							</div>
+							<div class="col-md-5 col-sm-6 col-xs-12">
+								<h4 class="text-primary">Risk Protection </h4>
+							
+								<ul style="bullet-style:square">
+									<li>The <a href="#" class="links">South African Game trade</a> is a mature and robust market, though it remains susceptible to various risks. </li>
+									<li>Inclusive in our offerring is animal insurance that reduces exposure to the risks of animal loss through predation, disease, and natural disasters. (poachers, are not a significant concern with these animals.)
+									<li>In addition, the farm insures against all losses that may occur due to a failure of its infrastructure or negligence. (fences,feeding etc.)
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.2s">
+								<h4 class="text-primary"> Heading... </h4>
+								<h3 >Links:</h3>
+								<ul class="marked-list  text-secondary">
+									<li><a href="#">Auction statistics</a></li>
+									<li><a href="#">Press articles</a></li>
+									<li><a href="#"></a></li>
+									<li><a href="#">Amet Tincidunt Ac Viverra</a></li>
+									<li><a href="#">Sed Nulla Donec Porta Diam</a></li>
+									<li><a href="#">Quisque Diam Lorem</a></li>
+									<li><a href="#">Interdum Vitae Dapibus Ac</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				<div class="container">
+					<hr/>
+				</div>
+
+				
+				<section class="well8">
+					<div class="container center767">
+						<h2>The South African Game Trade</h2>
+
+						<div class="resp-tabs">
+							<ul class="resp-tabs-list wow fadeInUp clearfix" data-wow-duration="2s" data-wow-delay="0.2s">
+								<li><span class="fa fa-click">1984</span></li>
+								<li><span>1989</span></li>
+								<li><span>1993</span></li>
+								<li><span>1997</span></li>
+								<li><span>2005</span></li>
+								<li><span>2014</span></li>
+							</ul>
+							<div class="resp-tabs-container">
+								<div class="row offs">
+									<div class="col-md-4 col-sm-6 col-xs-12">
+										<img src="images/page-2_img09.jpg" alt="">
+									</div>
+
+									<div class="col-md-8 col-sm-6 col-xs-12">
+										<h4 class="text-primary">suscipit nec mauris Suspendisse commodo tempor sagittis In
+											justo est sollicitudin eu scelerisque pretium placerat eget </h4>
+
+										<p>Pellentesque vitae tortor id neque fermentum pretium. Maecenas ac lacus ut neque
+											rhoncus laoreet sed id tellus. Donec justo tellus, tincidunt vitae pellentesque nec,
+											pharetra a orci. Praesent nunc nunc, egestas eget elementum sed; rutrum eget metus!
+											Vestibulum congue congue dui ut porta. Aenean laoreet viverra turpis, a commodo
+											purus eleifend a. Nam lacus dui; egestas ut aliquam nec, eleifend sit amet est. Nam
+											justo elit, dictum id tempus a, ultricies tempus lacus. <br><br>Nunc purus nibh;
+											eleifend eget facilisis ac, sagittis non tortor. Vivamus eu enim a orci accumsan
+											tincidunt ut ut elit. Vestibulum nisi orci, rutrum ac auctor non, viverra et magna?
+											Sed vehicula sem et arcu tincidunt accumsan. In non pellentesque ipsum. Curabitur
+											facilisis pellentesque pharetra. Donec justo urna, malesuada a viverra ac,
+											pellentesque vitae nunc. Aenean ac leo eget nunc fringilla a non nulla! Nunc orci
+											mi, venenatis quis ultrices vitae, congue non nibh. </p>
+									</div>
+								</div>
+
+								<div class="row offs">
+									<div class="col-md-4 col-sm-6 col-xs-12">
+										<img src="images/page-2_img10.jpg" alt="">
+									</div>
+
+									<div class="col-md-8 col-sm-6 col-xs-12">
+
+										<h4 class="text-primary">Maecenas ac lacus ut neque rhoncus laoreet sed id tellus. Donec
+											justo tellus,
+											tincidunt vitae pellentesque nec, pharetra a orci. </h4>
+
+										<p> Nunc purus nibh; eleifend eget facilisis ac, sagittis non tortor. Vivamus eu enim a
+											orci
+											accumsan tincidunt ut ut elit. Vestibulum nisi orci, rutrum ac auctor non, viverra
+											et magna?
+											Sed vehicula sem et arcu tincidunt accumsan. In non pellentesque ipsum. Curabitur
+											facilisis
+											pellentesque pharetra. Donec justo urna, malesuada a viverra ac, pellentesque vitae
+											nunc.
+											Aenean ac leo eget nunc fringilla a non nulla! Nunc orci mi, venenatis quis ultrices
+											vitae,
+											congue non nibh. <br><br>Pellentesque vitae tortor id neque fermentum pretium.
+											Maecenas ac
+											lacus ut neque rhoncus laoreet sed id tellus. Donec justo tellus, tincidunt vitae
+											pellentesque nec, pharetra a orci. Praesent nunc nunc, egestas eget elementum sed;
+											rutrum
+											eget metus! Vestibulum congue congue dui ut porta. Aenean laoreet viverra turpis, a
+											commodo
+											purus eleifend a. Nam lacus dui; egestas ut aliquam nec, eleifend sit amet est. Nam
+											justo
+											elit, dictum id tempus a, ultricies tempus lacus.</p>
+									</div>
+
+								</div>
+
+
+								<div class="row offs">
+									<div class="col-md-4 col-sm-6 col-xs-12">
+										<img src="images/page-2_img09.jpg" alt="">
+									</div>
+
+									<div class="col-md-8 col-sm-6 col-xs-12">
+										<h4 class="text-primary">suscipit nec mauris Suspendisse commodo tempor sagittis In
+											justo est sollicitudin eu scelerisque pretium placerat eget </h4>
+
+										<p>Pellentesque vitae tortor id neque fermentum pretium. Maecenas ac lacus ut neque
+											rhoncus laoreet sed id tellus. Donec justo tellus, tincidunt vitae pellentesque nec,
+											pharetra a orci. Praesent nunc nunc, egestas eget elementum sed; rutrum eget metus!
+											Vestibulum congue congue dui ut porta. Aenean laoreet viverra turpis, a commodo
+											purus eleifend a. Nam lacus dui; egestas ut aliquam nec, eleifend sit amet est. Nam
+											justo elit, dictum id tempus a, ultricies tempus lacus. <br><br>Nunc purus nibh;
+											eleifend eget facilisis ac, sagittis non tortor. Vivamus eu enim a orci accumsan
+											tincidunt ut ut elit. Vestibulum nisi orci, rutrum ac auctor non, viverra et magna?
+											Sed vehicula sem et arcu tincidunt accumsan. In non pellentesque ipsum. Curabitur
+											facilisis pellentesque pharetra. Donec justo urna, malesuada a viverra ac,
+											pellentesque vitae nunc. Aenean ac leo eget nunc fringilla a non nulla! Nunc orci
+											mi, venenatis quis ultrices vitae, congue non nibh. </p>
+									</div>
+								</div>
+
+								<div class="row offs">
+									<div class="col-md-4 col-sm-6 col-xs-12">
+										<img src="images/page-2_img10.jpg" alt="">
+									</div>
+
+									<div class="col-md-8 col-sm-6 col-xs-12">
+										<h4 class="text-primary">Maecenas ac lacus ut neque rhoncus laoreet sed id tellus. Donec
+											justo tellus,
+											tincidunt vitae pellentesque nec, pharetra a orci. </h4>
+
+										<p> Nunc purus nibh; eleifend eget facilisis ac, sagittis non tortor. Vivamus eu enim a
+											orci
+											accumsan tincidunt ut ut elit. Vestibulum nisi orci, rutrum ac auctor non, viverra
+											et magna?
+											Sed vehicula sem et arcu tincidunt accumsan. In non pellentesque ipsum. Curabitur
+											facilisis
+											pellentesque pharetra. Donec justo urna, malesuada a viverra ac, pellentesque vitae
+											nunc.
+											Aenean ac leo eget nunc fringilla a non nulla! Nunc orci mi, venenatis quis ultrices
+											vitae,
+											congue non nibh. <br><br>Pellentesque vitae tortor id neque fermentum pretium.
+											Maecenas ac
+											lacus ut neque rhoncus laoreet sed id tellus. Donec justo tellus, tincidunt vitae
+											pellentesque nec, pharetra a orci. Praesent nunc nunc, egestas eget elementum sed;
+											rutrum
+											eget metus! Vestibulum congue congue dui ut porta. Aenean laoreet viverra turpis, a
+											commodo
+											purus eleifend a. Nam lacus dui; egestas ut aliquam nec, eleifend sit amet est. Nam
+											justo
+											elit, dictum id tempus a, ultricies tempus lacus.</p>
+									</div>
+								</div>
+
+								<div class="row offs">
+									<div class="col-md-4 col-sm-6 col-xs-12">
+										<img src="images/page-2_img09.jpg" alt="">
+									</div>
+
+									<div class="col-md-8 col-sm-6 col-xs-12">
+										<h4 class="text-primary">suscipit nec mauris Suspendisse commodo tempor sagittis In
+											justo est sollicitudin eu scelerisque pretium placerat eget </h4>
+
+										<p>Pellentesque vitae tortor id neque fermentum pretium. Maecenas ac lacus ut neque
+											rhoncus laoreet sed id tellus. Donec justo tellus, tincidunt vitae pellentesque nec,
+											pharetra a orci. Praesent nunc nunc, egestas eget elementum sed; rutrum eget metus!
+											Vestibulum congue congue dui ut porta. Aenean laoreet viverra turpis, a commodo
+											purus eleifend a. Nam lacus dui; egestas ut aliquam nec, eleifend sit amet est. Nam
+											justo elit, dictum id tempus a, ultricies tempus lacus. <br><br>Nunc purus nibh;
+											eleifend eget facilisis ac, sagittis non tortor. Vivamus eu enim a orci accumsan
+											tincidunt ut ut elit. Vestibulum nisi orci, rutrum ac auctor non, viverra et magna?
+											Sed vehicula sem et arcu tincidunt accumsan. In non pellentesque ipsum. Curabitur
+											facilisis pellentesque pharetra. Donec justo urna, malesuada a viverra ac,
+											pellentesque vitae nunc. Aenean ac leo eget nunc fringilla a non nulla! Nunc orci
+											mi, venenatis quis ultrices vitae, congue non nibh. </p>
+									</div>
+								</div>
+
+								<div class="row offs">
+									<div class="col-md-4 col-sm-6 col-xs-12">
+										<img src="images/page-2_img10.jpg" alt="">
+									</div>
+
+									<div class="col-md-8 col-sm-6 col-xs-12">
+										<h4 class="text-primary">Maecenas ac lacus ut neque rhoncus laoreet sed id tellus. Donec
+											justo tellus,
+											tincidunt vitae pellentesque nec, pharetra a orci. </h4>
+
+										<p> Nunc purus nibh; eleifend eget facilisis ac, sagittis non tortor. Vivamus eu enim a
+											orci
+											accumsan tincidunt ut ut elit. Vestibulum nisi orci, rutrum ac auctor non, viverra
+											et magna?
+											Sed vehicula sem et arcu tincidunt accumsan. In non pellentesque ipsum. Curabitur
+											facilisis
+											pellentesque pharetra. Donec justo urna, malesuada a viverra ac, pellentesque vitae
+											nunc.
+											Aenean ac leo eget nunc fringilla a non nulla! Nunc orci mi, venenatis quis ultrices
+											vitae,
+											congue non nibh. <br><br>Pellentesque vitae tortor id neque fermentum pretium.
+											Maecenas ac
+											lacus ut neque rhoncus laoreet sed id tellus. Donec justo tellus, tincidunt vitae
+											pellentesque nec, pharetra a orci. Praesent nunc nunc, egestas eget elementum sed;
+											rutrum
+											eget metus! Vestibulum congue congue dui ut porta. Aenean laoreet viverra turpis, a
+											commodo
+											purus eleifend a. Nam lacus dui; egestas ut aliquam nec, eleifend sit amet est. Nam
+											justo
+											elit, dictum id tempus a, ultricies tempus lacus.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+
+				<!-- ===
+sectin removed 
+				
+				
+				<section class="parallax parallax1 well2 white center767" data-url="https://placehold.it/1950x2540" data-mobile="true" data-speed="0.8">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-8 col-sm-6 col-xs-12 center767">
+								<p><em>Game farming</em><span class="h1 text-uppercase"><br> consistently beats market indices</span></p>
+							</div>
+							<div class="col-md-4 col-sm-6 col-xs-12 text-right center991 wow fadeInRight"
+								 data-wow-duration="2s">
+								<a href="#" class="btn-link-lg fa fa-arrow-right mg-add2"></a>
+							</div>
+						</div>
+					</div>
+				</section>
+
+=== -->
+
+				<!--============================================ç
+Extra Well
+================================================================
+
+<section class="well3">
+<div class="container center767">
+<div class="row">
+<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.8s">
+<article>
+<h2 class="text-primary">Trading platforms</h2>
+<h4 class="text-secondary">dolore ipsum</h4>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisc elit. Proin ultricies vestibulum vebib
+dum et condimentum metusip dolore.</p>
+<a href="#" class="btn-sm"> More info</a>
+</article>
+</div>
+
+<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.6s">
+<article>
+<h2 class="text-primary">Trading
+conditions</h2>
+<h4 class="text-secondary">dolore ipsum</h4>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisc elit. Proin ultricies vestibulum vebib
+dum et condimentum metusip dolore.</p>
+<a href="#" class="btn-sm"> More info</a>
+</article>
+</div>
+
+<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.4s">
+<article>
+<h2 class="text-primary">Profit
+Calculation</h2>
+<h4 class="text-secondary">dolore ipsum</h4>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisc elit. Proin ultricies vestibulum vebib
+dum et condimentum metusip dolore.</p>
+<a href="#" class="btn-sm"> More info</a>
+</article>
+</div>
+
+<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
+<article>
+<h2 class="text-primary">Analysis
+reports</h2>
+<h4 class="text-secondary">dolore ipsum</h4>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisc elit. Proin ultricies vestibulum vebib
+dum et condimentum metusip dolore.</p>
+<a href="#" class="btn-sm"> More info</a>
+</article>
+</div>
+</div>
+</div>
+</section> 
+-->
+
+				<div class="container">
+					<hr/>
+				</div>
+			</main>
+
+			<!--========================================================
+FOOTER
+=========================================================-->
+			<footer>
+				<section class="bg-secondary well5">
+					<div class="container center767">
+						<div class="row">
+
+							<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-duration="" data-wow-delay="0.6s">
+								<h4 class="text-primary">Highlights</h4>
+								<ul class="text-uppercase">
+									<li><a href="#">Trading Platforms</a></li>
+									<li><a href="#">Trading Groups</a></li>
+									<li><a href="#">Automated Trading</a></li>
+									<li><a href="#">Lightspeed Institutional</a></li>
+									<li><a href="#">Trade-Ideas</a></li>
+									<li><a href="#">Live Webinars</a></li>
+									<li><a href="#">Downloadable Forms</a></li>
+									<li><a href="#">Web Partner Program</a></li>
+								</ul>
+							</div>
+
+							<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-duration="" data-wow-delay="0.2s">
+								<h4 class="text-primary">Legal</h4>
+								<ul class="text-uppercase">
+									<li><a href="#">Disclosures</a></li>
+									<li><a href="#">FINRA</a></li>
+									<li><a href="#">SIPC</a></li>
+									<li><a href="#">SEC Order Routing</a></li>
+									<li><a href="#">Disclosure</a></li>
+									<li><a href="#">Forex Risk Disclosure</a></li>
+								</ul>
+							</div>
+
+							<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInRight clearboth" data-wow-duration="" data-wow-delay="0.4s">
+								<h4 class="text-primary">BLOGS</h4>
+								<ul class="marked-list">
+									<li><a href="#">Dolore ipsum </a></li>
+									<li><a href="#">eniascet ing</a></li>
+									<li><a href="#">usti cumi dia</a></li>
+									<li><a href="#">sit amet sed</a></li>
+								</ul>
+							</div>
+
+							<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInRight" data-wow-duration="" data-wow-delay="0.8s">
+								<h4 class="text-primary">Connect with Us</h4>
+								<ul class="inline-list">
+									<li><a class="fa fa-facebook" href="#"></a></li>
+									<li><a class="fa fa-rss" href="#"></a></li>
+									<li><a class="fa fa-twitter" href="#"></a></li>
+									<li><a class="fa fa-google-plus" href="#"></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</section>
+				<div class="container">
+					<p class="navbar-brand brand__footer">
+						<a href="./">WildiNvest
+						</a>
+						<span class="brand_slogan">
+							Assets that Multiply
+						</span>
+					</p>
+					<div class="copyrights">
+						&#169; <span id="copyright-year"></span> |
+						<a href="index-6.html">Privacy Policy</a>
+						<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+						<p style="padding:10px;"></p>
+
+					</div>	
+				</div>
+			</footer>
+		</div>
+		<!-- =====================================================
+		Modals
+		=======================================================--> 
+		
+<!-- Purchase modal --> 
+		<div class="modal fade modal_style" role="dialog" id="purchase_modal">
+			<p style="padding:30px;"></p>
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h2 class="modal-title">Purchasing your Animals</h2>
+					</div>
+					<div class="modal-body">
+						<p>We can find the best deal and take care of all the logistics.<br>Whilst your animals are sedated for the relocation, we will take DNA samples, tag your animals, and embed microchips for lineage tracking. </p>
+						<p style="padding:10px;"></p>
+						<button type="button" class="btn btn-default btn" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!-- Wait modal -->
+		<div class="modal fade modal_style" role="dialog" id="wait_modal">
+			<p style="padding:30px;"></p>
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h2 class="modal-title">Breeding </h2>
+					</div>
+					<div class="modal-body">
+						<p> Fertile females produce at least 1 offspring per year. <br> Assuming that 90% females are fertile, and that 50% offs`ring are female, your herd will grow by an order of 5, over the 5 year duration of the agreement.   <br> See <a href="#" class="links">Profit calulation</a> for details. </p>
+						<p style="padding:10px;"></p>
+						<button type="button" class="btn btn-default btn" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- Profit modal --> 
+		<div class="modal fade modal_style" role="dialog" id="profit_modal">
+			<p style="padding:30px;"></p>
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h2 class="modal-title">5 Year Contract </h2>
+					</div>
+					<div class="modal-body">
+						<p>You actual ROI (after costs are deducted and profits have been shared) can be as high as 400%  for Sables, and 160% for Nyala.<br> See <a href="#" class="links">Profit calulation</a> for details. </p>
+						<p style="padding:10px;"></p>
+						<button type="button" class="btn btn-default btn" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- ProfitCalc_modal
+					-->
+		
+		<div class="modal fade modal_style" role="dialog" id="profitCalc_modal">
+            <p style="padding:50px;"></p>
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content row">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font-size:50px;">&times;</span></button>
+						<h2 class="modal-title">Profit Calculation</h2>
+					</div>
+					<div class="modal-body col-xs-12" style="padding:20px;">
+                        <div id="inputs" class="col-xs-12" >
+                            <div class="col-xs-12">
+                                <h4 style="text-align:center;">How much do you want to invest?</h4>
+                                <p style="padding:10px;"></p>
+                                <input type="text" name="investment" id="investment" placeholder="150 000-250 000 000" style="width:80%; position: relative; left: 10%; padding:20px;">
+                            </div>
+                            <div class="col-xs-10 col-xs-offset-1 col-sm-offset-3 col-sm-6">
+                                <p style="padding:10px;"></p>
+                                <button type="button" id="calc_btn" class="btn btn-primary btn-med btn-block" >Calculate</button>
+                            </div>
+                            
+                        </div>
+                        <div id="outputs" class="col-xs-12">
+                            <div class="row bg-light">
+                                <h3 class="col-xs-12 col-sm-4" style="text-align:center;margin-bottom:0px; margin-top:0px;">Investment</h3><h3 id="investAmount" class="col-xs-12  col-sm-8" style="color:dodgerblue; text-align:center;margin-bottom:0px; margin-top:0px;">test</h3>
+                                <h3 class="col-xs-12 col-sm-4" style="text-align:center;margin-bottom:0px; margin-top:0px;" id="animal">Nyala</h3>
+                                <h3 id="animalAmount" class="col-xs-12  col-sm-8" style="color:dodgerblue; text-align:center;margin-bottom:0px; margin-top:0px;">10 (test)</h3>
+                            </div>
+                            <div class="row bg-succ">
+                                <h2>Annual Payout    <span id="whatIsThis_open" style="text-decoration:link; font-size:20px; color:dodgerblue; cursor:pointer;">What is this?</span></h2>
+                                <div id="whatIsThis" class="col-xs-12 ">
+                                    <button type="button" class="close" id="whatIsThis_close" aria-label="Close"><span aria-hidden="true" style="font-size:30px; color:red;">&times;</span></button>
+                                    <ul class="nav nav-tabs col-xs-12">
+                                        <li class="active "><a data-toggle="tab" href="#tab6" >Year 1-3</a></li>
+                                        <li><a data-toggle="tab" href="#tab7">Year 4 &amp; 5 </a></li>
+                                    </ul>
+                                    <div class="tab-content col-xs-12">
+                                        <div id="tab6" class="tab-pane fade in active">
+                                            <p style="padding:20px; text-align:center;">Annual payout = (income from the sale of male offspring) - (farm expenses), <br> assuming current market value and that 50% of the offspring are male.</p> 
+                                        </div>
+                                        <div id="tab7" class="tab-pane fade col-xs-12">
+                                            <p style="padding:20px; text-align:center;">All animals are sold and profits are split 50/50</p> 
+                                        </div>
+                                    </div>   
+                                </div>
+                                <p style="padding:0px;"></p>
+                                <ul class="nav nav-tabs col-xs-12">
+                                    <li class="active "><a data-toggle="tab" href="#tab1" >Year 1</a></li>
+                                    <li><a data-toggle="tab" href="#tab2">Year 2</a></li>
+                                    <li><a data-toggle="tab" href="#tab3">Year 3</a></li>
+                                    <li><a data-toggle="tab" href="#tab4">Year 4</a></li>
+                                    <li><a data-toggle="tab" href="#tab5">Year 5</a></li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div id="tab1" class="tab-pane fade in active">
+                                        <h3 style="text-align:center;" id="yr1">R1 000 000 (test) </h3>
+                                    </div>
+                                    <div id="tab2" class="tab-pane fade">
+                                        <h3 style="text-align:center;" id="yr2">R1 000 000 (test)</h3>
+                                    </div>
+                                    <div id="tab3" class="tab-pane fade">
+                                        <h3 style="text-align:center;" id="yr3">R1 000 000 (test) </h3>
+
+                                    </div>
+                                    <div id="tab4" class="tab-pane fade">
+                                        <h3 style="text-align:center;" id="yr4">R1 000 000 (test) </h3>
+                                    </div>
+                                    <div id="tab5" class="tab-pane fade">
+                                        <h3 style="text-align:center;" id="yr5">R1 000 000 (test) </h3>
+                                    </div>
+                                </div> 
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                       
+                    
+                    
+						
+			
+
+
+
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/tm-scripts.js"></script>
+		<!-- </script> -->
+		<script src="profit_calc.js"></script>
+		
+		<!-- begin olark code -->
+		<script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+	f[z]=function(){
+		(a.s=a.s||[]).push(arguments)};var a=f[z]._={
+		},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+			f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+			0:+new Date};a.P=function(u){
+				a.p[u]=new Date-a.p[0]};function s(){
+					a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+						hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+							return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+								b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+									b.contentWindow[g].open()}catch(w){
+										c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+											var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+												b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+	loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+			/* custom configuration goes here (www.olark.com/documentation) */
+			olark.identify('1826-152-10-3754');/*]]>*/</script><noscript><a href="https://www.olark.com/site/1826-152-10-3754/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+		<!-- end olark code -->
+		<!-- google analytics  --> 
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+									})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-75582248-1', 'auto');
+			ga('send', 'pageview');
+
+		</script>
+		<!-- End of Google anyltics --> 
+
+	</body>
+</html>

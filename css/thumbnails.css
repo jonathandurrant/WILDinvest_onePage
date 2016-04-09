@@ -1,0 +1,18 @@
+.thumbnail {
+  margin-left: auto;
+  margin-right: auto;
+}
+.thumbnail .caption {
+  margin-top: 15px;
+}
+.thumbnail3 {
+  max-width: 270px;
+}
+.thumbnail4 {
+  max-width: 370px;
+}
+@media (max-width: 991px) {
+  .thumbnail6 {
+    max-width: 370px;
+  }
+}

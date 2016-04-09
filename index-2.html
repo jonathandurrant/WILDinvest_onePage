@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="format-detection" content="telephone=no"/>
+	<link rel="icon" href="images/antelope-128.png" type="image/x-icon">
+	<title>Game vs Securities</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Links -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/search.css" rel="stylesheet">
+
+
+    <!--JS-->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+
+
+    <!--[if lt IE 9]>
+    <div style=' clear: both; text-align:center; position: relative;'>
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
+            <img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+        </a>
+    </div>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <script src='js/device.min.js'></script>
+
+
+</head>
+<body>
+<div class="page">
+    <!--========================================================
+                              HEADER
+    =========================================================-->
+    <header>
+
+        <section class="clearfix">
+			<div class="container">
+				<!-- =======================================================
+							Login Block  
+				============================================================
+				<div class="block_login">
+				<a href="#" class="btn btn-default"><span class="fa fa-user"></span> Open an Account <span
+				class="fa fa-sort-desc"></span></a>
+				<a href="#" class="btn btn-primary"><span class="fa fa-lock"></span> login</a>
+				</div>  
+				-->
+				<div class="block_login">
+					<p style="padding:10px;"></p>
+					<a href="#" class="btn btn-default btn-lg chartInvest"><span class="fa fa-line-chart"></span>  How it works </a>
+					<a href="#" class="btn btn-primary btn-lg chartInvest"><span class="fa fa-edit"></span> Get Started </a>
+				</div>
+
+				<div class="navbar-header">
+					<h1 class="navbar-brand">
+						<a data-type='rd-navbar-brand' href="./">WILD<i>invest</i>
+						</a>
+						<span class="brand_slogan">
+							for a ROI that consistently<br> beats the market
+						</span>
+					</h1>
+				</div>
+			</div>
+
+			<div class="container">
+				<form class="search-form" action="search.php" method="GET" accept-charset="utf-8">
+					<label class="search-form_label">
+						<input class="search-form_input" type="text" name="s" autocomplete="off" placeholder=""/>
+						<span class="search-form_liveout"></span>
+					</label>
+					<button class="search-form_submit fa-search" type="submit"></button>
+				</form>
+			</div>
+		</section>
+
+		<div id="stuck_container" class="stuck_container">
+			<nav class="navbar navbar-default navbar-static-top ">
+				<div class="container">
+
+					<ul class="navbar-nav sf-menu" data-type="navbar">
+						<li class="dropdown">
+							<a href="index-3.html">Investment Model <span class="fa fa-caret-down"></span></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#" class="chartInvest"><span class="fa fa-line-chart"></span> How it works</a>
+								</li>
+								<li>
+									<a href="#">Profit Calculator</a>
+								</li>
+								<li>
+									<a href="#">Risk Protection</a>
+								</li>
+							</ul>
+						</li>
+						<li class="active">
+							<a href="index-2.html">Game vs securities</a>
+						</li>
+						<li>
+							<a href="index-1.html">The Farm</a>
+						</li>
+						<li>
+							<a href="index-4.html">The Industry</a>
+						</li>
+						<li>
+							<a href="index-5.html">Contact us</a>
+						</li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--========================================================
+                              CONTENT
+    =========================================================-->
+
+    <main>
+
+        <section class="well2">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-12 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.6s">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="icon"><span class="fa  fa-check-circle"></span></div>
+                            </div>
+                            <div class="panel-body panel-body__mod" data-equal-group="2">
+                                <h2>Individual <br/>
+                                    approach</h2>
+
+                                <h3 class="text-primary">Donec Porta Diam</h3>
+
+                                <p>Nam aliquam pretium feugiat. Duis sem est, <br/> viverra eu interdum ac, suscipit nec
+                                    mauris. <br/> Suspendisse commodo tempor sagittis! In <br/> justo est, sollicitudin
+                                    eu
+                                    scelerisque.</p>
+                                <a href="#" class="btn-link pulse"><img src="images/cross_icon.png" alt=""
+                                                                        class="no_resize"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="icon"><span class="fa  fa-bar-chart"></span></div>
+                            </div>
+                            <div class="panel-body panel-body__mod" data-equal-group="2">
+                                <h2>Business <br/>
+                                    analytics</h2>
+
+                                <h3 class="text-primary">Lacinia Fermentum</h3>
+
+                                <p>Duis sem est, viverra eu interdum ac, suscipit <br/> nec mauris. Suspendisse commodo
+                                    tempor
+                                    <br/>
+                                    sagittis! In justo est, sollicitudin eu scelerisque <br/> pretium, placerat eget
+                                    elit.</p>
+                                <a href="#" class="btn-link pulse"><img src="images/cross_icon.png" alt=""
+                                                                        class="no_resize"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.6s">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="icon"><span class="fa  fa-phone-square"></span></div>
+                            </div>
+                            <div class="panel-body panel-body__mod" data-equal-group="2">
+                                <h2>Investment <br/>
+                                    consulting</h2>
+
+                                <h3 class="text-primary">Congue Fermentum</h3>
+
+                                <p>Suspendisse commodo tempor sagittis! In <br/> justo est, sollicitudin eu scelerisque
+                                    pretium, <br/> placerat eget elit. Praesent faucibus rutrum <br/> odio at rhoncus.
+                                    Pellentesque
+                                    vitae.</p>
+                                <a href="#" class="btn-link pulse"><img src="images/cross_icon.png" alt=""
+                                                                        class="no_resize"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <hr/>
+        </div>
+
+        <section class="well2">
+            <div class="container center767">
+                <h2>Investment Overview</h2>
+
+                <div class="row offs2">
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <img src="images/page-3_img01.jpg" alt=""/>
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-xs-12">
+                        <h4 class="text-primary">commodo tempor sagittis In justo est sollicitudin eu scelerisque
+                            pretium placerat eget elit Praesent faucibus </h4>
+
+                        <p>Donec justo tellus, tincidunt vitae pellentesque nec, pharetra a orci. Praesent nunc nunc,
+                            egestas eget elementum sed; rutrum eget metus! Vestibulum congue congue dui ut porta. Aenean
+                            laoreet viverra turpis, a commodo purus eleifend a. Nam lacus dui; egestas ut aliquam nec,
+                            eleifend sit amet est. Nam justo elit, dictum id ultricies tempus lacus.
+                            <br/><br/>
+                            Nunc purus nibh; eleifend eget facilisis ac, sagittis non tortor. Vivamus eu enim a orci
+                            accumsan tincidunt ut ut elit. Vestibulum nisi orci, rutrum ac auctor non, viverra et magna?
+                            Sed vehicula sem et arcu tincidunt accumsan. In non pellentesque ipsum. Curabitur facilisis
+                            pellentesque pharetra. Donec justo urna, malesuada a viverra ac, pellentesque.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <ul class="marked-list  text-secondary">
+                            <li><a href="#">Velit Sed Leo Ut Pharetra</a></li>
+                            <li><a href="#">Augue Nec Augue</a></li>
+                            <li><a href="#">Nam Elit Agna Endrerit Sit</a></li>
+                            <li><a href="#">Amet Tincidunt Ac Viverra</a></li>
+                            <li><a href="#">Sed Nulla Donec Porta Diam</a></li>
+                            <li><a href="#">Quisque Diam Lorem</a></li>
+                            <li><a href="#">Interdum Vitae Dapibus Ac</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <hr/>
+        </div>
+
+        <section class="well7">
+            <div class="container center767">
+                <h2>WISE CAPITAL MANAGEMENT</h2>
+
+                <div class="row text-center offs2">
+                    <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.6s">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="icon"><span class="fa   fa-leaf"></span></div>
+                            </div>
+                            <div class="panel-body panel-body__mod" data-equal-group="3">
+                                <h2>Wise
+                                    investment
+                                    philosophy</h2>
+
+                                <h3 class="text-primary">Quisque Diam Lorem</h3>
+
+                                <p>In justo est, sollicitudin eu scelerisque <br/>
+                                    pretium, placerat eget elit. Praesent faucibus <br/> rutrum odio at rhoncus.
+                                    Pellentesque
+                                    vitae <br/> tortor id neque fermentum pretium.</p>
+                                <a href="#" class="btn-link pulse"><img src="images/cross_icon.png" alt=""
+                                                                        class="no_resize"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.4s">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="icon"><span class="fa   fa-usd"></span></div>
+                            </div>
+                            <div class="panel-body panel-body__mod" data-equal-group="3">
+                                <h2>Wise
+                                    investment
+                                    principles</h2>
+
+                                <h3 class="text-primary">Aenean Nec Eros</h3>
+
+                                <p>In justo est, sollicitudin eu scelerisque <br/>
+                                    pretium, placerat eget elit. Praesent faucibus <br/> rutrum odio at rhoncus.
+                                    Pellentesque
+                                    vitae <br/> tortor id neque fermentum pretium.</p>
+                                <a href="#" class="btn-link pulse"><img src="images/cross_icon.png" alt=""
+                                                                        class="no_resize"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="icon"><span class="fa  fa-arrow-up"></span></div>
+                            </div>
+                            <div class="panel-body panel-body__mod" data-equal-group="3">
+                                <h2>Future
+                                    goals, future
+                                    growth</h2>
+
+                                <h3 class="text-primary">Cursus Leo Vel Metus</h3>
+
+                                <p>In justo est, sollicitudin eu scelerisque <br/>
+                                    pretium, placerat eget elit. Praesent faucibus <br/> rutrum odio at rhoncus.
+                                    Pellentesque
+                                    vitae <br/> tortor id neque fermentum pretium.</p>
+                                <a href="#" class="btn-link pulse"><img src="images/cross_icon.png" alt=""
+                                                                        class="no_resize"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <hr/>
+        </div>
+
+        <section class="well9">
+            <div class="container center767">
+                <h2>INVESTMENT ADVISORY SERVICES</h2>
+
+                <div class="row text-center offs">
+                    <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <div class="panel">
+                            <div class="panel-heading panel-heading__mod ">
+                                <img src="images/page-3_img02.jpg" alt=""/>
+                            </div>
+                            <div class="panel-body panel-body__mod" data-equal-group="4">
+                                <h3 class="text-secondary">Ipsum Auctor Pulvinar</h3>
+
+                                <p>In justo est, sollicitudin eu scelerisque <br/>
+                                    pretium, placerat eget elit. Praesent faucibus <br/> rutrum odio at rhoncus. Pellentesque
+                                    vitae <br/> tortor id neque fermentum pretium.</p>
+                                <a href="#" class="btn-link pulse"><img src="images/cross_icon.png" alt=""
+                                                                        class="no_resize"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.4s">
+                        <div class="panel">
+                            <div class="panel-heading panel-heading__mod ">
+                                <img src="images/page-3_img03.jpg" alt=""/>
+                            </div>
+                            <div class="panel-body panel-body__mod" data-equal-group="4">
+                                <h3 class="text-secondary">Vestibulum Ante Ipsum</h3>
+
+                                <p>In justo est, sollicitudin eu scelerisque <br/>
+                                    pretium, placerat eget elit. Praesent faucibus <br/> rutrum odio at rhoncus. Pellentesque
+                                    vitae <br/> tortor id neque fermentum pretium.</p>
+                                <a href="#" class="btn-link pulse"><img src="images/cross_icon.png" alt=""
+                                                                        class="no_resize"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.6s">
+                        <div class="panel">
+                            <div class="panel-heading panel-heading__mod ">
+                                <img src="images/page-3_img04.jpg" alt=""/>
+                            </div>
+                            <div class="panel-body panel-body__mod" data-equal-group="4">
+                                <h3 class="text-secondary">In Faucibus Orci</h3>
+
+                                <p>In justo est, sollicitudin eu scelerisque <br/>
+                                    pretium, placerat eget elit. Praesent faucibus <br/> rutrum odio at rhoncus. Pellentesque
+                                    vitae <br/> tortor id neque fermentum pretium.</p>
+                                <a href="#" class="btn-link pulse"><img src="images/cross_icon.png" alt=""
+                                                                        class="no_resize"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row text-center offs3">
+                    <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <div class="panel">
+                            <div class="panel-heading panel-heading__mod ">
+                                <img src="images/page-3_img05.jpg" alt=""/>
+                            </div>
+                            <div class="panel-body panel-body__mod" data-equal-group="5">
+                                <h3 class="text-secondary">Posuere Cubilia Curae</h3>
+
+                                <p>In justo est, sollicitudin eu scelerisque <br/>
+                                    pretium, placerat eget elit. Praesent faucibus <br/> rutrum odio at rhoncus. Pellentesque
+                                    vitae <br/> tortor id neque fermentum pretium.</p>
+                                <a href="#" class="btn-link pulse"><img src="images/cross_icon.png" alt=""
+                                                                        class="no_resize"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.4s">
+                        <div class="panel">
+                            <div class="panel-heading panel-heading__mod ">
+                                <img src="images/page-3_img06.jpg" alt=""/>
+                            </div>
+                            <div class="panel-body panel-body__mod" data-equal-group="5">
+                                <h3 class="text-secondary">Donec Eget Tellus Non</h3>
+
+                                <p>In justo est, sollicitudin eu scelerisque <br/>
+                                    pretium, placerat eget elit. Praesent faucibus <br/> rutrum odio at rhoncus. Pellentesque
+                                    vitae <br/> tortor id neque fermentum pretium.</p>
+                                <a href="#" class="btn-link pulse"><img src="images/cross_icon.png" alt=""
+                                                                        class="no_resize"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.6s">
+                        <div class="panel">
+                            <div class="panel-heading panel-heading__mod ">
+                                <img src="images/page-3_img07.jpg" alt=""/>
+                            </div>
+                            <div class="panel-body panel-body__mod" data-equal-group="5">
+                                <h3 class="text-secondary">Quisque Diam Lorem</h3>
+
+                                <p>In justo est, sollicitudin eu scelerisque <br/>
+                                    pretium, placerat eget elit. Praesent faucibus <br/> rutrum odio at rhoncus. Pellentesque
+                                    vitae <br/> tortor id neque fermentum pretium.</p>
+                                <a href="#" class="btn-link pulse"><img src="images/cross_icon.png" alt=""
+                                                                        class="no_resize"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!--========================================================
+                              FOOTER
+    =========================================================-->
+    <footer>
+        <div class="container">
+			<p class="navbar-brand brand__footer">
+				<a href="./">WildiNvest
+				</a>
+				<span class="brand_slogan">
+					Assets that Multiply
+				</span>
+			</p>
+
+            <p class="copyrights">
+                &#169; <span id="copyright-year"></span> |
+                <a href="index-6.html">Privacy Policy</a>
+
+            </p>
+        </div>
+    </footer>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/tm-scripts.js"></script>
+<!-- </script> -->
+
+<!-- begin olark code -->
+<script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+f[z]=function(){
+	(a.s=a.s||[]).push(arguments)};var a=f[z]._={
+	},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+		f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+		0:+new Date};a.P=function(u){
+			a.p[u]=new Date-a.p[0]};function s(){
+				a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+					hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+						return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+							b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+								b.contentWindow[g].open()}catch(w){
+									c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+										var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+											b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+	/* custom configuration goes here (www.olark.com/documentation) */
+	olark.identify('1826-152-10-3754');/*]]>*/</script><noscript><a href="https://www.olark.com/site/1826-152-10-3754/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+<!-- end olark code -->
+<!-- Google analytics --> 
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+							})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-75582248-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
+
+<!-- End Google analytics --> 
+
+</body>
+</html>
