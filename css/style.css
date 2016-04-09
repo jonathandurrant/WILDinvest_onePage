@@ -610,6 +610,14 @@ My Edits  Section
 }
 .modal_style {
 	width:90%;
+    overflow:auto !important;
+}
+@media (max-width: 767px) {
+    .modal_style {
+        height: 90%;
+        top: 5%;
+        bottom: 5%;
+    }
 }
 .tooltip > .tooltip-inner {
 	background-color: #dbd7d2; 
@@ -621,11 +629,11 @@ My Edits  Section
 .modal_table_right {
     color:orange;
     text-align:center;
-    margin-bottom:0px;
-    margin-top:0px;
+    margin-bottom:0px !important;
+    margin-top:0px !important;
 }
 .modal_table_left {
     text-align:center;
-    margin-bottom:0px;
-    margin-top:0px;
+    margin-bottom:0px !important;
+    margin-top:0px !important;
 }
