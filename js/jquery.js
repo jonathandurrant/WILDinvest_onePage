@@ -6,22 +6,42 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
 var nyala_whl_fem = 22000; 
 var Nyala__ret_fem = 25000;
 var Sable__ret_fem = 300000;
-var Sable__whl_fem = Sable__ret_fem*0.93
+var Sable__whl_fem = Sable__ret_fem*0.93;
 var tag_cost = 1000;
-
+var saleComA = 0.04;
+var saleComB = 0.02;
+var saleComProfit = 0.01;
 
 
 function profitCalc() {
     var invest = $("#investment").val();
+    
     if (invest < 150000) {
         var x = Math.round((invest / 150000) * 100); 
         var Animal = "nyala";
-        var Investment_initial = 150000;
+        var invest = 150000;
         var Herd_initial = Math.round(invest / (Nyala__ret_fem + tag_cost));
-        $("#investAmount").text(x + "% of R " + Investment_initial);
-    }else if (invest < 600000){
+        var Investment_initial = Herd_initial * (Nyala__ret_fem + tag_cost);
+        $("#investAmount").text("R " + Investment_initial + " (minimum)");
+        $("#animalAmount").text(Herd_initial + " pregnant " + Animal);
+    } else if (invest < 600000) {
         var Animal = "nyala";
-    }else {
+        var Herd_initial = Math.round(invest / (Nyala__ret_fem + tag_cost));
+        var Investment_initial = Herd_initial * (Nyala__ret_fem + tag_cost);
+        $("#investAmount").text("R " + Investment_initial);
+        $("#animalAmount").text(Herd_initial + " pregnant " + Animal);
+    } else {
         var Animal = "sable";
-    } 
+        var Herd_initial = Math.round(invest / (Sable__ret_fem + tag_cost));
+        var Investment_initial = Herd_initial * (Sable__ret_fem + tag_cost);
+        $("#investAmount").text("R " + Investment_initial);
+        $("#animalAmount").text(Herd_initial + " pregnant " + Animal);
+    }
+    if (Investment_initial <= 1000000) {
+        var commission = Investment_initial * saleComA;
+        alert(commission);
+    } else {
+        var commission = (1000000 * saleComA) + (saleComB * (Investment_initial - 1000000));
+        alert(commission);
+    }    
 }
