@@ -49,9 +49,7 @@ alt="You are using an outdated browser. For a faster, safer browsing experience,
             $("#calc_btn").click(function(){
                 $("#inputs").hide();
                 $("#outputs").show();
-                $("#investAmount").text("R " +
-                    $("#investment").val()
-                );
+                profitCalc();                
             });
             $("#investment").keyup(function(event){
                 if(event.keyCode == 13){
