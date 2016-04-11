@@ -23,7 +23,7 @@ function profitCalc() {
     if (invest < 150000) {
         var x = Math.round((invest / 150000) * 100);
         $("#x").text(fNum(invest));
-        $(".y").text(x);
+        $(".y").text(x + "%");
         $("#investMinimum_modal").modal();
         var Animal = "nyala";
         var invest = 150000;
