@@ -641,3 +641,18 @@ My Edits  Section
     color:coral;
     font-size: 1.5em;
 }
+input.redPlace::-webkit-input-placeholder {
+    color: red !important;
+}
+
+input.redPlace:-moz-placeholder { /* Firefox 18- */
+    color: red !important;  
+}
+
+input.redPlace::-moz-placeholder {  /* Firefox 19+ */
+    color: red !important;  
+}
+
+input.redPlace:-ms-input-placeholder {  
+    color: red !important;  
+}

@@ -41,21 +41,31 @@ alt="You are using an outdated browser. For a faster, safer browsing experience,
                 $("#inputs").show();
                 $("#outputs").hide();
                 $("#investment").val("");
+                $("#investment").attr("placeholder", "150 000-25 000 000");
+                $("#investment").removeClass("redPlace");
             });
             $("#profitCalc_modal").on("shown.bs.modal", function() {
                 $("#investment").focus(); 
             });
             $("#outputs").hide();
             $("#calc_btn").click(function(){
-                $("#inputs").hide();
-                $("#outputs").show();
-                profitCalc();                
+                if (isNaN($("#investment").val())) {
+                    $("#investment").val("");
+                    $("#investment").attr("placeholder", "Please enter a number (no spaces, commas, or periods.)");
+                    $("#investment").focus();
+                    $("#investment").addClass("redPlace");
+                } else {
+                    $("#inputs").hide();
+                    $("#outputs").show();
+                    profitCalc();
+                }                
             });
             $("#investment").keyup(function(event){
                 if(event.keyCode == 13){
                     $("#calc_btn").click();
                 }
             });
+            
         });
         </script>
        
@@ -662,7 +672,7 @@ FOOTER
 						<p> Fertile females produce at least 1 offspring per year. <br> Assuming that 90% females are fertile, and that 50% offspring are female, your herd will grow by an order of 5, over the 5 year duration of the agreement.   <br> See <a href="#" class="links">Profit calulation</a> for details. </p>
 						<p style="padding:10px;"></p>
 						<button type="button" class="btn btn-default btn" data-dismiss="modal">Close</button>
-					</div>
+					</div> 
 				</div>
 			</div>
 		</div>
@@ -820,19 +830,21 @@ FOOTER
                         <h3 style="text-align:center">We've gone ahead and calculated your profit as a <span class="y"></span> share of this!</h3>
                     </div>
                     <div class="modal-body col-xs-12" style="padding:20px;">
-                    <div class="col-xs-12" >
-                        <div class="col-xs-12">
-                            <h4 style="text-align:center;">We suggest that you pool your money with friends or join an investment club.</h4>
-                            <p style="padding:10px;">With your investment of R<span id="x"></span>, you would own <span class="y"></span> of the investment.</p>
-                        </div>
-                        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-3 col-sm-6">
-                            <p style="padding:10px;"></p>
-                            <button type="button" data-dismiss="modal" aria-label="Close" id="iUnderstand" class="btn btn-primary btn-med btn-block" >I understand</button>
+                        <div class="col-xs-12" >
+                            <div class="col-xs-12">
+                                <h4 style="text-align:center;">We suggest that you pool your money with friends or join an investment club.</h4>
+                                <p style="padding:10px;">With your investment of R<span id="x"></span>, you would own <span class="y"></span> of the investment.</p>
+                            </div>
+                            <div class="col-xs-10 col-xs-offset-1 col-sm-offset-3 col-sm-6">
+                                <p style="padding:10px;"></p>
+                                <button type="button" data-dismiss="modal" aria-label="Close" id="iUnderstand" class="btn btn-primary btn-med btn-block" >I understand</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+                  
                     
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
