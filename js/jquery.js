@@ -21,26 +21,27 @@ var fertility = 0.90;
 function profitCalc() {
     var invest = $("#investment").val();
     if (invest < 150000) {
-        var x = Math.round((invest / 150000) * 100); 
         var x = Math.round((invest / 150000) * 100);
+        $("#x").text(fNum(invest));
         $(".y").text(x);
+        $("#investMinimum_modal").modal();
         var Animal = "nyala";
         var invest = 150000;
         var Herd_initial = Math.round(invest / (Nyala__ret_fem + tag_cost));
         var Investment_initial = Herd_initial * (Nyala__ret_fem + tag_cost);
-        $("#investAmount").text("R " + Investment_initial + " (minimum)");
+        $("#investAmount").text("R " + fNum(Investment_initial) + " (minimum)");
         $("#animalAmount").text(Herd_initial + " pregnant " + Animal);
     } else if (invest < 600000) {
         var Animal = "nyala";
         var Herd_initial = Math.round(invest / (Nyala__ret_fem + tag_cost));
         var Investment_initial = Herd_initial * (Nyala__ret_fem + tag_cost);
-        $("#investAmount").text("R " + Investment_initial);
+        $("#investAmount").text("R " + fNum(Investment_initial));
         $("#animalAmount").text(Herd_initial + " pregnant " + Animal);
     } else {
         var Animal = "sable";
         var Herd_initial = Math.round(invest / (Sable__ret_fem + tag_cost));
         var Investment_initial = Herd_initial * (Sable__ret_fem + tag_cost);
-        $("#investAmount").text("R " + Investment_initial);
+        $("#investAmount").text("R " + fNum(Investment_initial));
         $("#animalAmount").text(Herd_initial + " pregnant " + Animal);
     }
     var adultFem0 =  Herd_initial;
@@ -88,3 +89,10 @@ function profitCalc() {
         var commission = (1000000 * saleComA) + (saleComB * (Investment_initial - 1000000));
     }    
 }
+var fNum = function(num){
+    var n = num.toString(), p = n.indexOf('.');
+    return n.replace(/\d(?=(?:\d{3})+(?:\.|$))/g, function($0, i){
+        return p<0 || i<p ? ($0+' ') : $0;
+    });
+}
+
