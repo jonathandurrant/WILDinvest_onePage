@@ -610,7 +610,7 @@ My Edits  Section
 }
 .modal_style {
 	width:90%;
-    overflow:auto !important;
+    overflow-y:auto !important;
 }
 @media (max-width: 767px) {
     .modal_style {
