@@ -49,16 +49,22 @@ alt="You are using an outdated browser. For a faster, safer browsing experience,
             });
             $("#outputs").hide();
             $("#calc_btn").click(function(){
-                if (isNaN($("#investment").val())) {
+                if (isNaN($("#investment").val()) || $("#investment").val() < 0 ) {
                     $("#investment").val("");
-                    $("#investment").attr("placeholder", "Please enter a number (no spaces, commas, or periods.)");
+                    $("#investment").attr("placeholder", "Please enter a number (no spaces, commas, nor periods.)");
                     $("#investment").focus();
                     $("#investment").addClass("redPlace");
-                } else {
+                } else if ($("#investment").val() < 15000) {
+                    $("#investment").val("");
+                    $("#investment").attr("placeholder", "Sorry, this is too small");
+                    $("#investment").focus();
+                    $("#investment").addClass("redPlace");
+                    
+                } else { 
                     $("#inputs").hide();
                     $("#outputs").show();
                     profitCalc();
-                }                
+                }           
             });
             $("#investment").keyup(function(event){
                 if(event.keyCode == 13){
