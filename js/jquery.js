@@ -15,10 +15,10 @@ var saleComB = 0.02;
 var saleComProfit = 0.01;
 var overhead_cost_yr = 1267.25;
 var Cost_food_perYear_perAnimal = 2894.45;
-var fertility = 0.90;
-var highReturn = true;
+
 // the relative ratio of how much a baby eats compared to an adult.
 var babyFood_multiplier = 0.5;
+ 
 
 
 var adultFem = [];
@@ -28,7 +28,7 @@ var babyFem = [];
 var sellFem = [];
 var overhead = [];
 var maleDiv = [];
-var SalesPay = [];
+var salesPay = [6026, 0,0,0,18077,6026];
 var clientPay = [];
 
 var fNum  = function(num){
@@ -38,19 +38,34 @@ var fNum  = function(num){
     });
 }
 
-function profitCalc() {
+var profitCalc = function() {
+    var fertility = 0.90;
+    var highReturn = true;
     invest = $("#investment").val();
     investment();
     animal(invest);
     var Herd_initial = Math.round(invest / (femRet  + tag_cost));
     var Investment_initial = Herd_initial * (femRet + tag_cost);
-    $("#investAmount").text("R " + fNum(Investment_initial) + " (minimum)");
+    $("#investAmount").text("R " + fNum(Investment_initial));
     $("#animalAmount").text(Herd_initial + " pregnant " + Animal);
-    generations();
-    alert(adultFem[0]);
-    alert(Herd_initial);
+    generations(Herd_initial, highReturn,fertility);
+    var clientReturn = Math.ceil(ret());
+    var annualized = Math.ceil((Math.pow((clientReturn / Investment_initial ), (1 / 5)) - 1) * 1000) / 10;
+    var profit = clientReturn - Investment_initial;
+    console.log("baby " + baby);
+    console.log("babyMa " + babyMa);
+    console.log("babyFem " + babyFem);
+    console.log("adultFem " + adultFem);
+    console.log("clientPay " + clientPay);
+    console.log("overhead " + overhead);
+    console.log("maleDiv " + maleDiv);
+    console.log("sellFem " + sellFem);
+    console.log("salesPay " + salesPay);
+    console.log("ClientReturn " + clientReturn);
+    console.log("annualized " +annualized);
+    console.log("profit " + profit)
 }
-function animal(x) {
+var animal = function(x) {
     if (x < 600000) {
         Animal = "nyala";
         femRet = Nyala__ret_fem;
@@ -63,10 +78,10 @@ function animal(x) {
         femWhl = Sable__whl_fem;
     }
 }
-function overheadFnc(adultFem, babyFem) {
+var overheadFnc = function(adultFem, babyFem) {
     return Math.round((adultFem + (babyFem * babyFood_multiplier)) * (Cost_food_perYear_perAnimal + overhead_cost_yr));
 }
-function investment() {
+var investment = function() {
     if (invest < 156000) {
         var perc = Math.round((invest / 156000) * 100);
         $("#x").text(fNum(invest));
@@ -75,69 +90,79 @@ function investment() {
         invest = 156000;
     }
 }
-function money(babyM, overH, i) {
+var money = function(babyM, overH, i, highReturn) {
     maleDiv[i] = babyM * maleWhl;
     if (overH > maleDiv[i]) {
         sellFem[i] = Math.ceil((overH - maleDiv[i]) / femWhl);
     } else {
         sellFem[i] = 0;
     }
-    if (i === 1) {
+    if (i == 1) {
         if (highReturn) {
-            clientPay[i] = ((sellFem[i] * femWhl) + maleDiv[i] - overH) / 2 + (femWhl * Herd_initial);
+            return clientPay[i] = Math.ceil(((sellFem[i] * femWhl) + maleDiv[i] - overH) / 2);
         } else {
-            clientPay[i] = ((sellFem[i] * femWhl) + maleDiv[i] - overH) / 2;
+            return clientPay[i] = Math.ceil(((sellFem[i] * femWhl) + maleDiv[i] - overH) / 2 + (femWhl * adultFem[0]));
         }
     } else if (i === 4) {
-        clientPay[i] = (adultFem[i] * femWhl + maleDiv[i] - overH) / 2;
+        clientPay[i] = Math.ceil((adultFem[i] * femWhl + maleDiv[i] - overH) / 2);
     } else {
-        clientPay[i] = ((sellFem[i] * femWhl) + maleDiv[i] - overH) / 2;
+        clientPay[i] = Math.ceil(((sellFem[i] * femWhl) + maleDiv[i] - overH) / 2);
     }
+    clientPay[i] = clientPay[i] - (salesPay[i] / 2);
 }
-function generation0() {
+var generation0 = function(Herd_initial, highReturn) {
     adultFem[0] =  Herd_initial;
     baby[0] = adultFem[0];
     babyFem[0] = Math.ceil(baby[0] * 0.5);
     babyMa[0] = baby[0] - babyFem[0];
     overhead[0] = overheadFnc(adultFem[0], babyFem[0]);
-    money(babyMa[0], overhead[0], 0);
+    money(babyMa[0], overhead[0], 0, highReturn);
 }
-function generation1() {
-    if (highReturn) {
+var generation1 = function(highReturn, fertility) {
+    if (highReturn == true) {
         adultFem[1] = adultFem[0] + babyFem[0] - sellFem[0];
     } else {
         adultFem[1] = babyFem[0] - sellFem[0];
     }
-    baby[1] = adultFem[1] * fertility;
+    baby[1] = Math.ceil(adultFem[1] * fertility);
     babyFem[1] = Math.ceil(baby[1] * 0.5);
     babyMa[1] = baby[1] - babyFem[1];
     overhead[1] = overheadFnc(adultFem[1], babyFem[1]);
-    money(babyMa[1], overhead[1], 1);
+    money(babyMa[1], overhead[1], 1, highReturn);
 }
-function generation2_4(i) {
+var generation2_4 = function(i, highReturn, fertility) {
     adultFem[i] = adultFem[i-1] + babyFem[i-1] - sellFem[i-1];
-    baby[i] = adultFem[i];
+    baby[i] = Math.ceil(adultFem[i] * fertility);
     babyFem[i] = Math.ceil(baby[i] * 0.5);
     babyMa[i] = baby[i] - babyFem[i];
     overhead[i] = overheadFnc(adultFem[i], babyFem[i]);
-    money(babyMa[i], overhead[i], i);
+    money(babyMa[i], overhead[i], i, highReturn);
 }
-function generation5(i) {
+var generation5 = function(i) {
     adultFem[i] = babyFem[i-1];
     baby[i] = 0;
     babyFem[i] = 0;
     babyMa[i] = 0;
     overhead[i] = overheadFnc(adultFem[i], babyFem[i]);
-    clientPay[i] = (adultFem[i] - overhead[i]) / 2;
+    clientPay[i] = ((adultFem[i]  * femWhl) - overhead[i]) / 2;
+    clientPay[i] = clientPay[i] - (salesPay[i] / 2);
+    maleDiv[i] = 0;
 }
-function generations() {
-    for (var i = 0; 1 < 6; ++i) {
+var ret = function() {
+    var clientReturn = 0;
+    for ( i = 0; i < 6; i++) {
+        clientReturn = clientReturn + clientPay[i]; 
+    }
+    return clientReturn;
+}
+function generations(Herd_initial, highReturn, fertility) {
+    for (var i = 0; i < 6; ++i) {
         if (i == 0) {
-            generation0();
+            generation0(Herd_initial, highReturn);
         } else if (i == 1) {
-            generation1();
-        } else if (i < 4) {
-            generation2_4(i);
+            generation1(highReturn, fertility);
+        } else if (i < 5) {
+            generation2_4(i, highReturn, fertility);
         } else {
             generation5(i);
         }
