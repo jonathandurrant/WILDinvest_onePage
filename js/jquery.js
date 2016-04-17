@@ -12,6 +12,7 @@ var Sable_whl_m = 40000;
 var tag_cost = 1000;
 var saleComA = 0.04;
 var saleComB = 0.02;
+var saleComC = 0.01;
 var saleComProfit = 0.01;
 var overhead_cost_yr = 1267.25;
 var Cost_food_perYear_perAnimal = 2894.45;
@@ -19,7 +20,7 @@ var Cost_food_perYear_perAnimal = 2894.45;
 // the relative ratio of how much a baby eats compared to an adult.
 var babyFood_multiplier = 0.5;
  
-
+ 
 
 var adultFem = [];
 var baby = [];
@@ -28,7 +29,7 @@ var babyFem = [];
 var sellFem = [];
 var overhead = [];
 var maleDiv = [];
-var salesPay = [6026, 0,0,0,18077,6026];
+var salesPay = [];
 var clientPay = [];
 
 var fNum  = function(num){
@@ -37,10 +38,9 @@ var fNum  = function(num){
         return p < 0 || i < p ? ($0 + ' ') : $0;
     });
 }
-
 var profitCalc = function() {
     var fertility = 0.90;
-    var highReturn = true;
+    var highReturn = true; 
     invest = $("#investment").val();
     investment();
     animal(invest);
@@ -50,8 +50,21 @@ var profitCalc = function() {
     $("#animalAmount").text(Herd_initial + " pregnant " + Animal);
     generations(Herd_initial, highReturn,fertility);
     var clientReturn = Math.ceil(ret());
-    var annualized = Math.ceil((Math.pow((clientReturn / Investment_initial ), (1 / 5)) - 1) * 1000) / 10;
     var profit = clientReturn - Investment_initial;
+    console.log("ClientReturn bef " + clientReturn);
+    console.log("annualized bef " +annualized);
+    console.log("profit bef " + profit)
+    var saleCommission = Math.round(salesP(profit, Investment_initial));
+    clientPay[1] = Math.ceil(clientPay[1] - (saleCommission / 8));
+    clientPay[4] = Math.ceil(clientPay[4] - (saleCommission / 4));
+    clientPay[5] = Math.ceil(clientPay[5] - (saleCommission / 8));
+    profit =  Math.ceil(profit - (saleCommission / 2));
+    clientReturn = Math.ceil(clientReturn - (saleCommission / 2));
+    var annualized = Math.ceil((Math.pow((clientReturn / Investment_initial ), (1 / 5)) - 1) * 1000) / 10;
+    populate(clientPay, sellFem, babyMa);
+    $("#return").text( "R" + fNum(clientReturn) + " (" + 10 * Math.ceil( (10 * profit) / Investment_initial) + "%)");
+    $("#annualized").text(annualized + "%");
+    $("#profit").text("R" + fNum(profit)); 
     console.log("baby " + baby);
     console.log("babyMa " + babyMa);
     console.log("babyFem " + babyFem);
@@ -60,7 +73,7 @@ var profitCalc = function() {
     console.log("overhead " + overhead);
     console.log("maleDiv " + maleDiv);
     console.log("sellFem " + sellFem);
-    console.log("salesPay " + salesPay);
+    console.log("saleCommission " + saleCommission);
     console.log("ClientReturn " + clientReturn);
     console.log("annualized " +annualized);
     console.log("profit " + profit)
@@ -98,17 +111,13 @@ var money = function(babyM, overH, i, highReturn) {
         sellFem[i] = 0;
     }
     if (i == 1) {
-        if (highReturn) {
-            return clientPay[i] = Math.ceil(((sellFem[i] * femWhl) + maleDiv[i] - overH) / 2);
-        } else {
-            return clientPay[i] = Math.ceil(((sellFem[i] * femWhl) + maleDiv[i] - overH) / 2 + (femWhl * adultFem[0]));
+        if (!highReturn) {
+            sellFem[1] = adultFem[0];
         }
-    } else if (i === 4) {
-        clientPay[i] = Math.ceil((adultFem[i] * femWhl + maleDiv[i] - overH) / 2);
-    } else {
-        clientPay[i] = Math.ceil(((sellFem[i] * femWhl) + maleDiv[i] - overH) / 2);
+    } else if (i == 4) {
+        sellFem[4] = adultFem[4]
     }
-    clientPay[i] = clientPay[i] - (salesPay[i] / 2);
+    clientPay[i] = Math.ceil(((sellFem[i] * femWhl) + maleDiv[i] - overH) / 2);   
 }
 var generation0 = function(Herd_initial, highReturn) {
     adultFem[0] =  Herd_initial;
@@ -117,6 +126,7 @@ var generation0 = function(Herd_initial, highReturn) {
     babyMa[0] = baby[0] - babyFem[0];
     overhead[0] = overheadFnc(adultFem[0], babyFem[0]);
     money(babyMa[0], overhead[0], 0, highReturn);
+    
 }
 var generation1 = function(highReturn, fertility) {
     if (highReturn == true) {
@@ -129,6 +139,7 @@ var generation1 = function(highReturn, fertility) {
     babyMa[1] = baby[1] - babyFem[1];
     overhead[1] = overheadFnc(adultFem[1], babyFem[1]);
     money(babyMa[1], overhead[1], 1, highReturn);
+    
 }
 var generation2_4 = function(i, highReturn, fertility) {
     adultFem[i] = adultFem[i-1] + babyFem[i-1] - sellFem[i-1];
@@ -143,9 +154,9 @@ var generation5 = function(i) {
     baby[i] = 0;
     babyFem[i] = 0;
     babyMa[i] = 0;
+    sellFem[i] = adultFem[i];
     overhead[i] = overheadFnc(adultFem[i], babyFem[i]);
     clientPay[i] = ((adultFem[i]  * femWhl) - overhead[i]) / 2;
-    clientPay[i] = clientPay[i] - (salesPay[i] / 2);
     maleDiv[i] = 0;
 }
 var ret = function() {
@@ -168,3 +179,36 @@ function generations(Herd_initial, highReturn, fertility) {
         }
     }
 }
+var salesP = function(profit, Investment_initial) {
+    var commission = profit * saleComC;
+    if (Investment_initial <= 1000000) {
+        commission = commission + (Investment_initial * saleComA);
+    } else {
+        commission = commission + (1000000 * saleComA) + (saleComB * (Investment_initial - 1000000));
+    }
+    return commission;
+}
+var clientReturn_adjust = function(clientPay, profit, clientReturn, saleCommission) {
+    clientPay[4] = clientPay[4] - (saleCommission / 4);
+    clientPay[5] = clientPay[5] - (saleCommission / 4);
+    profit = profit - (saleCommission / 2);
+    clientReturn = clientReturn - (saleCommission / 2);
+}
+var populate = function(clientPay, sellFem, babyMa) {
+    $("#yr1").text("R" + fNum(clientPay[1] + clientPay[0]));
+    for (i = 2; i < 6; i++) {
+        var yr = "#yr" + i;
+        $(yr).text("R" + fNum(clientPay[i]));
+    }
+    for (i = 1; i < 6; i++) {
+        var sold = "#sold" + i;
+        var remaining = "#remaining" + i;
+        if (sellFem[i] == 0) {
+            $(sold).text(babyMa[i] + " males");
+        } else {
+            $(sold).text(babyMa[i]  + " males, " + sellFem[i] + " females" ); 
+        }
+        $(remaining).text(adultFem[i] + babyFem[i])
+    }
+}
+
