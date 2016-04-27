@@ -205,10 +205,11 @@ var populate = function(clientPay, sellFem, babyMa) {
         var remaining = "#remaining" + i;
         if (sellFem[i] == 0) {
             $(sold).text(babyMa[i] + " males");
+        } else if (babyMa[i] == 0) {
+            $(sold).text(sellFem[i] + " females"); 
         } else {
             $(sold).text(babyMa[i]  + " males, " + sellFem[i] + " females" ); 
         }
-        $(remaining).text(adultFem[i] + babyFem[i])
+        $(remaining).text(adultFem[i] + babyFem[i] - sellFem[i] + " females")
     }
 }
-
