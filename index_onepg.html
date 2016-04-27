@@ -75,6 +75,10 @@ alt="You are using an outdated browser. For a faster, safer browsing experience,
         <!-- Profit Calc modal --> 
         <script>
         $(document).ready(function(){
+            $(".citations").hover(function(){
+                $(this).popover({ content: "View citation tab", selector: ".citations", animation: "yes"}); 
+                $(this).popover("toggle");
+            });
             $("#profitCalc_modal").on("hidden.bs.modal", function() {
                 $("#inputs").show();
                 $("#outputs").hide();
