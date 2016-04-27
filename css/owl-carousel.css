@@ -210,7 +210,7 @@
 }
 .owl-nav .owl-next:hover,
 .owl-nav .owl-prev:hover {
-	color: #216C2A;
+    color: #0E8044;
   -moz-transition: 0.3s;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -229,7 +229,7 @@
 }
 .owl-dots .owl-dot {
   display: inline-block;
-  background: #464646;
+    background: #677077;
   width: 14px;
   height: 14px;
   -webkit-border-radius: 50%;
@@ -242,7 +242,7 @@
 }
 .owl-dots .owl-dot:hover,
 .owl-dots .owl-dot.active {
-	background: #216C2A;
+    background: #0E8044;
 }
 .owl-dots .owl-dot + .owl-dot {
   margin-left: 7px;
