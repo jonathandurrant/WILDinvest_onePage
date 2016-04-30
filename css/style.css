@@ -684,3 +684,6 @@ input.redPlace:-ms-input-placeholder {
     font-style: italic;
     font-size: 1.18em;
 }
+.bulleted {
+    list-style:circle !important;
+}
