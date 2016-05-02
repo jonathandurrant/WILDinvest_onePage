@@ -153,7 +153,7 @@ h3 + .offs {
   display: inline-block;
   width: 109px;
   height: 109px;
-	background: #216C2A;
+    background: #0E8044;
   position: relative;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -235,7 +235,7 @@ h3 + .offs {
   font-weight: 400;
   font-size: 15px;
   font-family: 'FontAwesome';
-	color: #216C2A;
+    color: #0E8044;
   -moz-transition: 0.3s;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -306,10 +306,10 @@ table tr td a:hover {
   color: #464646;
 }
 table tr td a:hover .fa:before {
-	color: #216C2A;
+    color: #0E8044;
 }
 table tr td:last-child {
-  background: #464646;
+    background: #677077;
   color: #fff;
   width: 32.6316%;
   padding: 20px 10px 20px 36px;
@@ -318,25 +318,25 @@ table tr:hover td {
   background: #fafafa;
 }
 table tr:hover td:last-child {
-  background: #dbd7d2;
+    background: #e1e3e4;
 }
 table tr:nth-child(even) td {
   background: #fafafa;
 }
 table tr:nth-child(even) td:last-child {
-  background: #dbd7d2;
+    background: #e1e3e4;
 }
 table tr:nth-child(even):hover td {
-  background: #464646;
+    background: #677077;
 }
 table tr:nth-child(even):hover td a:hover {
-	color: #216C2A;
+    color: #0E8044;
 }
 table tr:nth-child(even):hover td a .fa:before {
   color: #ffffff;
 }
 table tr:nth-child(even):hover td a .fa:before:hover {
-	color: #216C2A;
+    color: #0E8044;
 }
 table tr:nth-child(even):hover td * {
   color: #fff;
@@ -374,7 +374,7 @@ table tr:nth-child(even):hover td:last-child * {
 }
 .inline-list li a:after {
   content: "";
-	background: #216C2A;
+    background: #0E8044;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -470,7 +470,7 @@ hr {
   font-size: 14px;
   line-height: 24px;
   display: inline-block;
-	color: #216C2A;
+    color: #0E8044;
   margin-top: 28px;
 }
 .term-list a[href^="mailto:"]:hover {
@@ -526,7 +526,7 @@ main {
                      FOOTER  Styles
 =========================================================*/
 footer {
-  background: #dbd7d2;
+    background: #e1e3e4;
   color: #858585;
   font-family: Arial, sans-serif;
 }
@@ -610,12 +610,83 @@ My Edits  Section
 }
 .modal_style {
 	width:90%;
+    overflow-y:auto !important;
+}
+@media (max-width: 767px) {
+    .modal_style {
+        height: 90%;
+        top: 5%;
+        bottom: 5%;
+        width:90%;
+        overflow-y:auto !important;
+    }
 }
 .tooltip > .tooltip-inner {
-	background-color: #dbd7d2; 
+    background-color: #e1e3e4; 
 	color: #FFFFFF; 
 	border: 1px solid black; 
 	padding: 15px;
 	width: 10%;
-	
+}
+.modal_table_right {
+    color:orange;
+    text-align:center;
+    margin-bottom:0px !important;
+    margin-top:0px !important;
+}
+.modal_table_left {
+    text-align:center;
+    margin-bottom:0px !important;
+    margin-top:0px !important;
+}
+.y {
+    color:coral;
+    font-size: 1.5em;
+}
+input.redPlace::-webkit-input-placeholder {
+    color: red !important;
+}
+
+input.redPlace:-moz-placeholder { /* Firefox 18- */
+    color: red !important;  
+}
+
+input.redPlace::-moz-placeholder {  /* Firefox 19+ */
+    color: red !important;  
+}
+
+input.redPlace:-ms-input-placeholder {  
+    color: red !important;  
+}
+/* CSS for google chart (industry data) */
+
+#chart_div {
+    width:100%;
+    height:inherit;
+}
+.citations {
+    color: lightcoral;
+}
+.blockyquote {
+    font: 14px/22px normal helvetica, sans-serif !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+
+    padding-left: 15px !important;
+    border-left: 3px solid #ccc !important;
+    background: linear-gradient(#e1e3e4,white);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.blockyquote p {
+    display: inline !important;
+}
+.emphasis {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.18em;
+}
+.bulleted {
+    list-style:circle !important;
+    
 }

@@ -182,7 +182,7 @@
   font-weight: 300;
 }
 .camera_caption .h4 {
-  color: #dbd7d2;
+    color: #e1e3e4;
   margin-top: 20px;
 }
 @media (max-width: 1600px) {
@@ -252,5 +252,5 @@
 }
 .camera_next:hover:before,
 .camera_prev:hover:before {
-	color: #216C2A;
+    color: #0E8044;
 }
