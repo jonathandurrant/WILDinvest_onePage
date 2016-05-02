@@ -617,6 +617,8 @@ My Edits  Section
         height: 90%;
         top: 5%;
         bottom: 5%;
+        width:90%;
+        overflow-y:auto !important;
     }
 }
 .tooltip > .tooltip-inner {
@@ -669,7 +671,7 @@ input.redPlace:-ms-input-placeholder {
     font: 14px/22px normal helvetica, sans-serif !important;
     margin-top: 10px !important;
     margin-bottom: 10px !important;
-    margin-left: 10px !important;
+
     padding-left: 15px !important;
     border-left: 3px solid #ccc !important;
     background: linear-gradient(#e1e3e4,white);
@@ -686,4 +688,5 @@ input.redPlace:-ms-input-placeholder {
 }
 .bulleted {
     list-style:circle !important;
+    
 }
