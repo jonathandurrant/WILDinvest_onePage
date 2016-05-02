@@ -6624,6 +6624,7 @@ button.close {
 }
 .modal-open {
   overflow: hidden;
+    position: absolute;
 }
 .modal {
   display: none;
