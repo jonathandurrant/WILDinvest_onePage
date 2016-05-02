@@ -63,8 +63,9 @@ var profitCalc = function() {
     var annualized = Math.ceil((Math.pow((clientReturn / Investment_initial ), (1 / 5)) - 1) * 1000) / 10;
     populate(clientPay, sellFem, babyMa);
     $("#return").text( "R" + fNum(clientReturn));
-    $("#annualized").text(annualized + "%");
+    $("#annualized").text(annualized + "% interest");
     $("#profit").text("R" + fNum(profit) + " (" + 10 * Math.ceil( (10 * profit) / Investment_initial) + "% ROI)"); 
+    $("#offspring").text(baby[0] + baby[1] + baby[2] +baby[3] +baby[4] + baby[5]);
     console.log("baby " + baby);
     console.log("babyMa " + babyMa);
     console.log("babyFem " + babyFem);
