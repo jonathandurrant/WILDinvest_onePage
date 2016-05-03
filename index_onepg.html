@@ -75,13 +75,13 @@ alt="You are using an outdated browser. For a faster, safer browsing experience,
         <!-- Profit Calc modal --> 
         <script>
         $(document).ready(function(){
-            $(".citations").hover(function(){
+            
+            $(".citations").mouseover(function(){
                 $(this).popover({ content: "Click to open in new tab", selector: ".citations", animation: "yes", placement: "auto"}); 
-                $(this).popover("toggle");
+                $(this).popover("show");
             });
-            $(".infoModal").hover(function(){
-                $(this).popover({ trigger: "hover", animation: "yes"});
-                $(this).popover("toggle");
+            $(".citations").mouseleave(function(){ 
+                $(this).popover("hide");
             });
             $("#saveForm").click(function(){
                 $("#contact_modal").hide();
@@ -232,11 +232,10 @@ CONTENT
 				
                 <p id="howItWorks" style="padding:10px;"> </p>
 
-
                 <section class="bg-light well">
 					<div class="container text-center" >
 						<div class="row">
-							<div class="col-md-4 col-sm-4 col-xs-12 mg-add wow fadeInUp infoModal" data-wow-duration="2s" data-wow-delay="0.2s" data-toggle="popover" title="Click for more information:" data-content="Purchasing animals" data-placement="right">
+							<div class="col-md-4 col-sm-4 col-xs-12 mg-add wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
                                 <div class="panel" href="#purchase_modal" data-toggle="modal">
 									<div class="panel-heading">
 										<div class="icon"><span class="fa fa-shopping-cart" style="font-size:50px;"></span></div>
@@ -246,12 +245,12 @@ CONTENT
                                         <br><h3 class="text-primary">Purchase your herd</h3>
                                         <h4 style="padding:5px;">We will</h4>
                                         <ul><li>Locate sellers</li><li>Manage transactions</li><li>Manage animal relocations to our farms</li></ul>
-										<a class="btn-link pulse" ><span class="fa fa-info info_style" style="font-size:35px;"></span></a>
+                                        <a class="btn-link pulse" ><span class="fa fa-info info_style" style="font-size:35px;"></span></a>
 									</div>
 								</div>
 							</div>
 							
-                            <div class="col-md-4 col-sm-4 col-xs-12 mg-add wow fadeInUp infoModal" data-wow-duration="2s" data-wow-delay="0.4s" data-toggle="popover" title="Click for more information:" data-content="Breeding program" data-placement="right">
+                            <div class="col-md-4 col-sm-4 col-xs-12 mg-add wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.4s">
                                 <div class="panel" href="#wait_modal" data-toggle="modal"  >
 									<div class="panel-heading" >
 										<div class="icon"><span class="fa fa-line-chart lineChart" style="font-size:50px;"></span></div>
@@ -266,7 +265,7 @@ CONTENT
 								</div>
 							</div>
 
-                            <div class="col-md-4 col-sm-4 col-xs-12 mg-add wow fadeInUp infoModal" data-wow-duration="2s" data-wow-delay="0.6s" data-toggle="popover" title="Click for more information:" data-content="Profits" data-placement="left">
+                            <div class="col-md-4 col-sm-4 col-xs-12 mg-add wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.6s" >
                                 <div class="panel" href="#profit_modal" data-toggle="modal">
 									<div class="panel-heading">
 										<div class="icon"><span class="fa fa-pie-chart"></span></div>
