@@ -6121,32 +6121,35 @@ a.list-group-item-danger.active:focus {
     margin-right: auto;
   }
 }
-.panel:hover {
-  animation-duration: .8s;
-  animation-name: pulse;
-  animation-timing-function: linear;
+@media (min-width: 767px) {
+    .panel:hover {
+        animation-duration: .8s;
+        animation-name: pulse;
+        animation-timing-function: linear;
+    }
+    .panel:hover .panel-heading {
+        background: #0E8044;
+    }
+    .panel:hover .panel-heading .icon .fa {
+        background: #677077;
+    }
+    .panel:hover .panel-body .btn-link {
+        display: inline-block;
+        -moz-box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
+        -webkit-box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
+        -moz-transform: translateZ(0px);
+        -ms-transform: translateZ(0px);
+        -o-transform: translateZ(0px);
+        -webkit-transform: translateZ(0px);
+        transform: translateZ(0px);
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-name: pulse;
+        animation-timing-function: linear;
+    }
 }
-.panel:hover .panel-heading {
-    background: #0E8044;
-}
-.panel:hover .panel-heading .icon .fa {
-    background: #677077;
-}
-.panel:hover .panel-body .btn-link {
-  display: inline-block;
-  -moz-box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
-  -moz-transform: translateZ(0px);
-  -ms-transform: translateZ(0px);
-  -o-transform: translateZ(0px);
-  -webkit-transform: translateZ(0px);
-  transform: translateZ(0px);
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-name: pulse;
-  animation-timing-function: linear;
-}
+
 .panel-body {
   padding: 43px 10px 92px;
   background: #ffffff;
