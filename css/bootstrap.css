@@ -1188,8 +1188,15 @@ th {
   transform: scale(1.1);
 }
 /*=================       Tabs     ======================*/
-.resp-tabs {
-  margin-top: 103px;
+@media (max-width: 767px){
+    .resp-tabs {
+        margin-top: 25px;
+    }
+}
+@media (min-width: 768px){
+    .resp-tabs {
+        margin-top: 103px;
+    }
 }
 .resp-tabs-list {
   position: relative;
@@ -6545,43 +6552,43 @@ a.list-group-item-danger.active:focus {
   padding-bottom: 75%;
 }
 .well {
-  padding-bottom: 104px;
+  padding-bottom: 25px;
 }
 .well2 {
-  padding-top: 87px;
-  padding-bottom: 87px;
+  padding-top: 25px;
+    padding-bottom: 25px;
 }
 .well3 {
-  padding-top: 82px;
-  padding-bottom: 90px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 .well4 {
-  padding-top: 58px;
-  padding-bottom: 115px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 .well5 {
-  padding-top: 58px;
-  padding-bottom: 94px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 .well6 {
   padding-top: 82px;
   padding-bottom: 76px;
 }
 .well7 {
-  padding-top: 58px;
-  padding-bottom: 54px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 .well8 {
-  padding-top: 87px;
-  padding-bottom: 115px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 .well9 {
-  padding-top: 66px;
-  padding-bottom: 127px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 .well10 {
-  padding-top: 72px;
-  padding-bottom: 72px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 .well11 {
   padding-top: 72px;
@@ -6604,8 +6611,8 @@ a.list-group-item-danger.active:focus {
   border-radius: 3px;
 }
 .well1 {
-  padding-bottom: 90px;
-  padding-top: 90px;
+    padding-bottom: 25px;
+    padding-top: 25px;
 }
 .close {
   float: right;
