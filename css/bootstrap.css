@@ -1558,6 +1558,7 @@ th {
   -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
   z-index: 99999991;
+  text-align: center !important;
 }
 .rd-mobilepanel_title {
   position: fixed;
