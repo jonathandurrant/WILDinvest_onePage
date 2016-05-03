@@ -1803,10 +1803,14 @@ a:active {
   background: transparent;
   text-decoration: none;
 }
-a:hover {
-  text-decoration: none;
-    color: #0E8044;
+@media (min-width: 769px){
+    a:hover {
+        text-decoration: none;
+        color: #0E8044;
+    }
 }
+    
+
 a[href^="tel:"],
 a[href^="callto:"] {
   text-decoration: none;
@@ -3618,10 +3622,12 @@ select[multiple].form-group-lg .form-control {
   position: relative;
   text-transform: uppercase;
 }
-.btn:hover {
-    color: #0E8044;
-    background-color: #677077;
-    border-color: #0E8044;
+@media (min-width: 769px) {
+    .btn:hover {
+        color: #0E8044;
+        background-color: #677077;
+        border-color: #0E8044;
+    }
 }
 .btn:hover:active,
 .btn:hover.active,
@@ -3680,16 +3686,19 @@ fieldset[disabled] .btn:hover.active {
   -webkit-transform: translateZ(1px);
   transform: translateZ(1px);
 }
-.pulse:hover,
-.pulse:active {
-  -moz-box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-name: pulse;
-  animation-timing-function: linear;
+@media (min-width: 769px){
+    .pulse:hover,
+    .pulse:active {
+        -moz-box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
+        -webkit-box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-name: pulse;
+        animation-timing-function: linear;
+    }
 }
+
 .btn-default {
   color: #ffffff;
     background-color: #677077;
@@ -3760,10 +3769,12 @@ fieldset[disabled] .btn-default:focus.active {
   color: #464646;
   background-color: #ffffff;
 }
-.btn-default:hover {
-  color: #464646;
-    background-color: #e1e3e4;
-    border-color: #e1e3e4;
+@media (min-width: 769px) {
+    .btn-default:hover {
+        color: #464646;
+        background-color: #e1e3e4;
+        border-color: #e1e3e4;   
+    } 
 }
 .btn-default:hover:active,
 .btn-default:hover.active,
@@ -4206,11 +4217,14 @@ fieldset[disabled] .btn-link {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.btn-link:hover {
-    color: #0E8044;
-  text-decoration: none;
-    background-color: #677077;
+@media (min-width: 769px){
+    .btn-link:hover {
+        color: #0E8044;
+        text-decoration: none;
+        background-color: #677077;
+    }
 }
+
 .btn-link[disabled]:hover,
 fieldset[disabled] .btn-link:hover,
 .btn-link[disabled]:focus,
@@ -6121,32 +6135,32 @@ a.list-group-item-danger.active:focus {
     margin-right: auto;
   }
 }
-@media (min-width: 767px) {
+@media (min-width: 769px) {
     .panel:hover {
-        animation-duration: .8s;
-        animation-name: pulse;
-        animation-timing-function: linear;
+    animation-duration: .8s;
+    animation-name: pulse;
+    animation-timing-function: linear;
     }
     .panel:hover .panel-heading {
-        background: #0E8044;
+    background: #0E8044;
     }
     .panel:hover .panel-heading .icon .fa {
-        background: #677077;
+    background: #677077;
     }
     .panel:hover .panel-body .btn-link {
-        display: inline-block;
-        -moz-box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
-        -webkit-box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
-        box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
-        -moz-transform: translateZ(0px);
-        -ms-transform: translateZ(0px);
-        -o-transform: translateZ(0px);
-        -webkit-transform: translateZ(0px);
-        transform: translateZ(0px);
-        animation-duration: 1s;
-        animation-iteration-count: infinite;
-        animation-name: pulse;
-        animation-timing-function: linear;
+    display: inline-block;
+    -moz-box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
+    -moz-transform: translateZ(0px);
+    -ms-transform: translateZ(0px);
+    -o-transform: translateZ(0px);
+    -webkit-transform: translateZ(0px);
+    transform: translateZ(0px);
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-name: pulse;
+    animation-timing-function: linear;
     }
 }
 
@@ -6595,7 +6609,7 @@ a.list-group-item-danger.active:focus {
 }
 .close {
   float: right;
-  font-size: 21px;
+  font-size: 55px;
   font-weight: bold;
   line-height: 1;
   color: #000000;
@@ -6625,9 +6639,12 @@ button.close {
   border: 0;
   -webkit-appearance: none;
 }
+body .modal-open {
+    position:relative;
+    overflow: hidden;
+}
 .modal-open {
   overflow: hidden;
-    position: absolute;
 }
 .modal {
   display: none;
@@ -6638,7 +6655,6 @@ button.close {
   bottom: 0;
   left: 5%;
   z-index: 1050;
-  -webkit-overflow-scrolling: touch;
   outline: 0;
 }
 .modal.fade .modal-dialog {

@@ -690,3 +690,6 @@ input.redPlace:-ms-input-placeholder {
     list-style:circle !important;
     
 }
+.removePulse {
+    animation-name: none !important;
+}
