@@ -49,7 +49,7 @@
                     }).append($('<span/>')))
                     .append($('<h2/>', {
                         'class': settings.titleClass                        
-            }).append($('[data-type="rd-navbar-brand"]').length? $('[data-type="rd-navbar-brand"]').html() : "WILDinvest - Getting in the Game"))
+            }).append($('[data-type="rd-navbar-brand"]').length? $('[data-type="rd-navbar-brand"]').html() : "WILDinvest"))
                     );
         },
 
