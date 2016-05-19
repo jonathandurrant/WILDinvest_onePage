@@ -84,6 +84,12 @@ alt="You are using an outdated browser. For a faster, safer browsing experience,
             $(".citations").mouseleave(function(){ 
                 $(this).popover("hide");
             });
+            $(".infoModal").hover(function(){
+                $(this).popover({animation: "yes", placement: "auto"}); 
+                $(this).popover("show");
+            }, function(){ 
+                $(this).popover("hide");
+            });
             $("#saveForm").click(function(){
                 $("#contact_modal").hide();
                 $("#thankYou_modal").show();
